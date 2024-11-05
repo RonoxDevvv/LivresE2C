@@ -1,0 +1,37 @@
+@font-face {
+    font-family: Darkcastle;
+    src: url(./Super_Rugged.ttf);
+}
+
+html {
+    background: linear-gradient(#ffffff, #8a8a8a);
+}
+
+body {
+    font-family: Darkcastle;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+h1, h2, p {
+    background: linear-gradient(90deg, #0000FF, #8A2BE2); /* Bleu à violet */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+p {
+    font-size: 1em;
+    margin: 0.5em 0;
+    text-align: center;
+}
