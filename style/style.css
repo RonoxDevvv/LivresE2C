@@ -3,25 +3,42 @@
     src: url(./Super_Rugged.ttf);
 }
 
-html {
-    background: linear-gradient(#ffffff, #8a8a8a);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.E2CLink {
+    text-decoration: none;
+}
+
+.E2CLink:hover {
+    color: red;
+    text-decoration: underline;
 }
 
 body {
+    background: linear-gradient(#ffffff, #8a8a8a);
     font-family: Darkcastle;
     line-height: 1.6;
-    margin: 20px;
 }
 
-h1, h2, p {
-    background: linear-gradient(90deg, #0000FF, #8A2BE2); /* Bleu à violet */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    color: white;
+    background-color: black;
+    height: 20vh;
+    padding: 15px;
 }
 
 h1 {
     font-size: 2em;
     margin-bottom: 0.5em;
+    text-align: center;
 }
 
 h2 {
@@ -32,6 +49,40 @@ h2 {
 
 p {
     font-size: 1em;
-    margin: 0.5em 0;
-    text-align: center;
+    margin: 0.5em;
+}
+
+#Logo {
+    height: 100%;
+}
+
+#Titre {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-right: 10%;
+}
+
+main {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    width: 60%;
+    background-color: #ffffff;
+    padding: 15px;
+    border: black solid 3px;
+    border-radius: 20px;
+    margin: 30px;
+}
+
+#Banniere {
+    height: 60vh;
+    width: 110%;
+    background-image: url("../asset/library.png");
 }
