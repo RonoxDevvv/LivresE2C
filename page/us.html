@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <script type="module" src="../script.js"></script>
+    <!--<script type="module" src="../script/script.js"></script>-->
+    <script type="module" src="../script/nav.js"></script>
     <title>Projet "Silence, on lit!" - E2C Lille</title>
 </head>
 <body>
@@ -19,12 +20,13 @@
                 <img src="../asset/logo.png" alt="Logo">
             </div>
             <h1 id="Titre">Silence, on lit !</h1>
-            <div id="NavLinks">
-                <a href="../index.html">Accueil</a>
-                <a href="./library.html">Bibliothèque</a>
-                <a href="./game.html">Espace détente</a>
-                <a href="./us.html">Qui sommes-nous</a>
-        </div>
+            <div id="NavLinks" class="hidden">
+                <div id="ExpandButton"></div> <!-- Le carré noir initial -->
+                <a href="../index.html" class="link">Accueil</a>
+                <a href="./library.html" class="link">Bibliothèque</a>
+                <a href="./game.html" class="link">Espace détente</a>
+                <a href="./us.html" class="link">Qui sommes-nous</a>
+            </div> 
         </div>
     </header>
 
