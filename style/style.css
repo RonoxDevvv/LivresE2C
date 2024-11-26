@@ -136,7 +136,7 @@ article {
 #NavLinks {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Ajuste l'espacement horizontal entre les boutons */
+    gap: 130px; /* Ajuste l'espacement horizontal entre les boutons */
     width: 100%; 
 }
 
