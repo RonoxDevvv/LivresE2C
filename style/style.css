@@ -127,7 +127,7 @@ article {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0;
+    gap: 100;
     z-index: 100;
     pointer-events: auto; /* Assure que le carré peut être cliqué */
     cursor: pointer;
@@ -138,7 +138,7 @@ article {
     width: 1000px; /* Augmente la largeur à 1000px */
     height: 100px; /* Hauteur de 100px */
     background-color: #131212;
-    gap: 10px; /* Espacement entre les boutons */
+    gap: 150px; /* Espacement entre les boutons */
     flex-direction: row; /* Les boutons se disposent en ligne */
 }
 

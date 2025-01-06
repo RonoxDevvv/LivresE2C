@@ -1,3 +1,8 @@
+<?php 
+    $title = "Projet Silence, on lit! - E2C Lille"
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -14,21 +19,10 @@
 <body>
     <nav>
     </nav>
-    <header>
-        <div id="NavBar">
-            <div id="Logo">
-                <img src="../asset/logo.png" alt="Logo">
-            </div>
-            <h1 id="Titre">Silence, on lit !</h1>
-            <div id="NavLinks" class="hidden">
-                <div id="ExpandButton"></div> <!-- Le carré noir initial -->
-                <a href="../index.html" class="link">Accueil</a>
-                <a href="./library.html" class="link">Bibliothèque</a>
-                <a href="./game.html" class="link">Espace détente</a>
-                <a href="./us.html" class="link">Qui sommes-nous</a>
-            </div> 
-        </div>
-    </header>
+    
+    <?php 
+        require_once("../module/_header.php")
+    ?>
 
     <main>
         

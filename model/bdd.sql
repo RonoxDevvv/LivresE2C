@@ -100,3 +100,77 @@ drop site;
 /* Jointure */
 
 select Users.pseudo, Users.email, Sites.name from Users inner join Sites on Users.site_id = Sites.id;
+
+/* Les livres */
+
+create table if not exists Genre ( 
+    id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE
+)ENGINE=InnoDB;
+
+create table if not exists Livres (
+    id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    Titre VARCHAR(255) NOT NULL,
+    Auteur VARCHAR(255) NOT NULL DEFAULT "Inconnu",
+    Genre_id TINYINT UNSIGNED NOT NULL DEFAULT 1,
+    Synopsis TEXT, 
+    Date CHAR(4) NOT NULL DEFAULT '-NC-',
+    Pages SMALLINT,
+    Site_id TINYINT UNSIGNED NOT NULL,
+    CONSTRAINT fk_genre
+        FOREIGN KEY (Genre_id)
+        REFERENCES Genre(id),
+
+    CONSTRAINT fk_sites_book
+        FOREIGN KEY (Site_id)
+        REFERENCES Sites(id),
+)ENGINE=InnoDB;
+
+alter table Livres 
+    add column user_id SMALLINT UNSIGNED;
+
+alter table Livres 
+    add CONSTRAINT fk_livres_user
+    FOREIGN KEY (user_id)
+    REFERENCES Users(id)
+
+/* Les jointures */
+
+select titre, user_id from Livres;
+
+create view livres_vw as (select Livres.id, Livres.titre, Users.pseudo as Utilisateur, Livres.Auteur, Livres.Pages, Livres.Date, Genre.name as Genre, Sites.name AS Ville, Livres.user_id, Livres.site_id, Livres.Genre_id from Livres 
+    Left Join Users on Livres.user_id = Users.id
+    Left Join Genre on Livres.Genre_id = Genre.id
+    Left Join Sites on Livres.Site_id = Sites.id);
+
+
+select Livres.titre, Users.pseudo from Livres 
+    Left Join Users on Livres.user_id = Users.id; 
+
+select Livres.titre, Users.pseudo from Livres 
+    Right Join Users on Livres.user_id = Users.id; 
+
+/* Recherche */
+
+select * from livres_vw where Pages <= 100 order by pages asc
+
+/* Relation plusieurs à plusieurs - Commentaires */
+
+create table if not exists comments (
+    comment text not null,
+    user_id SMALLINT UNSIGNED NOT NULL,
+    livre_id SMALLINT UNSIGNED NOT NULL,
+    PRIMARY KEY (user_id, livre_id),
+    CONSTRAINT fk_comment_user
+        FOREIGN KEY (user_id)
+        REFERENCES Users(id),   
+
+    CONSTRAINT fk_comment_livre
+        FOREIGN KEY (livre_id)
+        REFERENCES Livres(id)
+)ENGINE=InnoDB;
+
+select Livres.titre, Users.pseudo, Comments.Comments from Livres
+    Inner Join Comments on Livres.id = Comments.livre_id
+    Inner Join Users on Comments.user_id = Users.id
+    where Livres.id = 35;

@@ -5,7 +5,7 @@ const expandButton = document.getElementById('ExpandButton');
 expandButton.addEventListener('click', () => {
     if (navLinks.classList.contains('expanded')) {
         navLinks.classList.remove('expanded'); // Fermer le menu et réapparaître le carré
-        expandButton.style.display = 'block';
+        //expandButton.style.display = 'block';
     } else {
         navLinks.classList.add('expanded'); // Agrandir le menu et cacher le carré
         expandButton.style.backgroundColor = 'transparent';

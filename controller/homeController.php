@@ -1,9 +1,22 @@
+<?php
+
+$isLogged = true;
+
+if($isLogged) {
+    $navButtons[]= [
+        "label" => "Mon Compte",
+        "path" => "../controller/accountController.php"
+    ];
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -14,23 +27,10 @@
 <body>
     <nav>
     </nav>
-    <header>
-        <div id="NavBar">
-            <div id="Logo">
-                <img src="./asset/logo.png" alt="Logo">
-            </div>
-            <h1 id="Titre">Silence, on lit !</h1>
-            <!-- Le carré noir qui va se transformer en menu -->
-            <div id="NavLinks">
-                <div id="ExpandButton"></div> <!-- Carré noir initial -->
-                <!-- Les liens de navigation, cachés au début -->
-                <a href="./index.html" class="link">Accueil</a>
-                <a href="./page/library.html" class="link">Bibliothèque</a>
-                <a href="./page/game.html" class="link">Espace détente</a>
-                <a href="./page/us.html" class="link">Qui sommes-nous</a>
-            </div>                      
-        </div>
-    </header>
+    
+    <?php 
+        require_once("../module/_header.php")
+    ?>
 
     <main>
         <article>
@@ -127,5 +127,6 @@
             </p>
         </article>
     </main>
+    <div id="trigger"></div>
 </body>
 </html>

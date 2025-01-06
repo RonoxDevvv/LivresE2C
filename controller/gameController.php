@@ -14,24 +14,10 @@
 <body>
     <nav>
     </nav>
-    <header>
-        <div id="NavBar">
-            <div id="Logo">
-                <img src="../asset/logo.png" alt="Logo">
-            </div>
-            <h1 id="Titre">Silence, on lit !</h1>
-            <!-- Initialement caché, mais visible après l'interaction -->
-            <div id="NavLinks" class="hidden">
-                <!-- Le carré noir initial, avec le bouton d'agrandissement -->
-                <div id="ExpandButton"></div>
-                <!-- Les liens de navigation qui seront révélés lorsque le carré est agrandi -->
-                <a href="../index.html" class="link">Accueil</a>
-                <a href="./library.html" class="link">Bibliothèque</a>
-                <a href="./game.html" class="link">Espace détente</a>
-                <a href="./us.html" class="link">Qui sommes-nous</a>
-            </div>                      
-        </div>
-    </header>
+    
+    <?php 
+        require_once("../module/_header.php")
+    ?>
     
     
 
