@@ -21,10 +21,33 @@
                 <img src="../asset/logo.png" alt="Logo">
             </div>
             <h1 id="Titre"> <?= $title ?> </h1>
+            <div id="logForm">
+                    <?php 
+                        if(isset($_POST["username"])) {
+                            $username = $_POST["username"]
+                        ?>
+                            <p><?= "Bonjour $username" ?></p>
+                        <?php
+                        } else {
+                        ?>
+                        <form method="post" action="../controller/loginController.php" id="login-form">
+                            <div class="form-line">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" id="email" required>
+                            </div>
+                            <div class="form-line">
+                                <label for="password">Mot de passe</label>
+                                <input type="password" name="password" id="password" required>
+                            </div>
+                            <div class="form-line">
+                                <input type="submit" value="Se connecter" class="login-bouton">
+                            </div>
+                        </form><?php 
+                    }?>
+                </div>
             <!-- Le carré noir qui va se transformer en menu -->
             <div id="NavLinks">
-                <div id="ExpandButton"></div> <!-- Carré noir initial -->
-                <!-- Les liens de navigation, cachés au début -->
+                <div id="ExpandButton"></div>
                 <a href="../controller/homeController.php" class="link">Accueil</a>
                 <a href="../controller/libraryController.php" class="link">Bibliothèque</a>
                 <a href="../controller/gameController.php" class="link">Espace détente</a>

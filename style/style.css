@@ -11,7 +11,7 @@
 
 #NavBar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start; /* Remonte les éléments vers le haut */
     background: linear-gradient(to right, #383636, #131212);
@@ -151,6 +151,8 @@ article {
     transform: scale(0.8); /* Réduits initialement */
     transition: all 0.5s ease; /* Apparition fluide */
     pointer-events: none; /* Désactive les clics sur les liens */
+    border: white solid 2px;
+    border-radius: 5px;
 }
 
 /* Quand l'agrandissement est effectué */
@@ -216,4 +218,50 @@ h1, h2, p {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#logForm {
+    width: 20%;
+    height: 70%;
+    border: red solid 2px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formulaire de connexion */
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+}
+
+.form-line {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 5px 0;
+}
+
+.form-line>* {
+    display: block;
+}
+
+.login-bouton {
+    padding: 2px;
+    background-color: red;
+    color: blue;
+    border: blue solid 1px;
+    border-radius: 5px;
+}
+
+.login-bouton:hover {
+    background-color: blue;
+    color: red;
 }

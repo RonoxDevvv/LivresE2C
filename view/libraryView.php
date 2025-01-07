@@ -1,3 +1,6 @@
+
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,20 +12,17 @@
     <script type="module" src="../script/nav.js"></script>
     <title>Projet "Silence, on lit!" - E2C Lille</title>
 </head>
-
-
-<nav>
-    <?php
-        foreach($navButtons as $button) {
-            ?>
-                <a href=<?= $button["path"] ?> class="link"><?= $button["label"] ?></a>
-            <?php
-        }
+<body>
+    <nav>
+    </nav>
+    
+    <?php 
+        require_once("../module/_header.php");
+        require_once("../module/_nav.php");
     ?>
-    <!--
-    <a href="../controller/homeController.php" class="bouton">Accueil</a>
-    <a href="../controller/libraryController.php" class="bouton">Bibliothèque</a>
-    <a href="../controller/gameController.php" class="bouton">Espace détente</a>
-    <a href="../controller/usController.php" class="bouton">Qui sommes-nous</a>
-    -->
-</nav>
+
+    <main>
+        
+    </main>
+</body>
+</html>
