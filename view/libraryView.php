@@ -22,7 +22,28 @@
     ?>
 
     <main>
-        
+        <div id="book-table">
+            <div id="head-line">
+                <div class="title">Titre</div>
+                <div class="author">Auteur</div>
+                <div class="genre">Genre</div>
+                <div class="date">Date</div>
+                <div class="link"></div>
+            </div>
+            <?php 
+                foreach($bookList AS $book) {
+                    ?>
+                        <div class="book-line">
+                            <div class="title"> <?= $book["titre"] ?> </div>
+                            <div class="author"> <?= $book["Auteur"] ?> </div>
+                            <div class="genre"> <?= $book["Genre"] ?> </div>
+                            <div class="date"> <?= $book["Date"] ?> </div>
+                            <div class="linkSQL"> 1 </div>
+                        </div>
+                    <?php
+                }
+            ?>
+        </div>
     </main>
 </body>
 </html>

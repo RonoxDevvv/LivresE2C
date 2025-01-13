@@ -24,10 +24,11 @@
             <h1 id="Titre"> <?= $title ?> </h1>
             <div id="logForm">
                     <?php 
-                        if(isset($_SESSION["ID"])) {
+                        if(isset($_SESSION["id"])) {
                             $username = $_SESSION["pseudo"];
                         ?>
                             <p><?= "Bonjour $username" ?></p>
+                            <a href="../controller/logoutController.php" class="login-bouton">Déconnexion</a>
                         <?php
                         } else {
                         ?>

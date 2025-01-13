@@ -23,4 +23,13 @@ class Model {
 
         return $req;
     }
+
+    public function getAllBooks() {
+        $sqlQuery = "SELECT titre, Auteur, Genre, Date, id FROM livres_vw";
+        $statement = $this->db->prepare($sqlQuery);
+        $statement->execute();
+        $req = $statement->fetchAll();
+
+        return $req;
+    }
 }

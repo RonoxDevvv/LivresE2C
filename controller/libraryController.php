@@ -2,6 +2,13 @@
     
     session_start();
 
+    require_once('../model/Model.php');
+
+    $db = new Model();
+    $bookList = $db->getAllBooks();
+
+    //var_dump($bookList);
+
     //$username=$_POST["username"];
     $navButtons = 
     [
@@ -23,7 +30,7 @@
         ],
     ];   
 
-    if($_SESSION["ID"]) {
+    if(isset($_SESSION["id"])) {
         $navButtons[]= [
             "label" => "Mon compte",
             "path" => "../controller/accountController.php"

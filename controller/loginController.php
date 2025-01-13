@@ -24,7 +24,7 @@
         } else if($password != $user["password"]) {
             $message = "Mot de passe incorrect";
         } else {
-            $_SESSION["ID"] = $user["ID"];
+            $_SESSION["id"] = $user["id"];
             $_SESSION["pseudo"] = $user["pseudo"];
 
             header("location: ../controller/homeController.php?message=$message");    
