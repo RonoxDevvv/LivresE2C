@@ -1,5 +1,5 @@
 <?php 
-
+    session_start();
     $navButtons = 
     [
         [
@@ -19,6 +19,13 @@
             "path" => "../controller/usController.php"
         ],
     ];    
+
+    if($_SESSION["ID"]) {
+        $navButtons[]= [
+            "label" => "Mon compte",
+            "path" => "../controller/accountController.php"
+        ];
+    }
 
     require_once("../view/gameView.php");
 ?>

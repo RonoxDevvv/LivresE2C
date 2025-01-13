@@ -14,7 +14,7 @@ use Livre_E2C /* Utilise une db */
 
 /* Gestion de compte */
 
-create user 'Livre_E2C_admin'@'localhost' identified by "123456789";
+create user 'Livre_E2C_admin'@'localhost' identified by "123456789"; /*  enzo_master */
 grant all privileges on Livre_E2C.* to 'Livre_E2C_admin'@'localhost';
 
 /* Se connecter à mySQL avec un compte utilisateur spécifique */

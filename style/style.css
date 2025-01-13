@@ -265,3 +265,12 @@ h1, h2, p {
     background-color: blue;
     color: red;
 }
+
+.message {
+    width: 100%;
+    color: red;
+    text-decoration: underline;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: small;
+}

@@ -1,7 +1,9 @@
 <?php 
+
+    session_start();
     $isLogged = false;
 
-    if($isLogged) {
+    if(!isset($_SESSION['ID'])) {
         $title = "Mon Compte";
         $subtitle = "Mes infos";
     

@@ -11,7 +11,8 @@
 </head>
 
 <?php 
-    $title = "Silence, on lit !"
+    $title = "Silence, on lit !";
+    $isLogged = true;
 ?>
 
 
@@ -23,8 +24,8 @@
             <h1 id="Titre"> <?= $title ?> </h1>
             <div id="logForm">
                     <?php 
-                        if(isset($_POST["username"])) {
-                            $username = $_POST["username"]
+                        if(isset($_SESSION["ID"])) {
+                            $username = $_SESSION["pseudo"];
                         ?>
                             <p><?= "Bonjour $username" ?></p>
                         <?php
@@ -32,13 +33,22 @@
                         ?>
                         <form method="post" action="../controller/loginController.php" id="login-form">
                             <div class="form-line">
-                                <label for="email">Email</label>
+                                <label for="email">Email : </label>
                                 <input type="email" name="email" id="email" required>
                             </div>
                             <div class="form-line">
-                                <label for="password">Mot de passe</label>
+                                <label for="password">Mot de passe : </label>
                                 <input type="password" name="password" id="password" required>
                             </div>
+                            <?php 
+                                if(isset($_GET["message"])) {
+                                    ?>
+
+                                    <div class="message"><?= $_GET["message"] ?></div>
+                                        
+                                    <?php
+                                }
+                            ?>
                             <div class="form-line">
                                 <input type="submit" value="Se connecter" class="login-bouton">
                             </div>
@@ -52,6 +62,13 @@
                 <a href="../controller/libraryController.php" class="link">Bibliothèque</a>
                 <a href="../controller/gameController.php" class="link">Espace détente</a>
                 <a href="../controller/usController.php" class="link">Qui sommes-nous</a>
+                <?php 
+                if($isLogged) {
+                    ?>
+                    <a href="../controller/accountController.php" class="link">Mon Compte</a>
+                    <?php
+                }
+                ?>
             </div>                      
         </div>
 </header>

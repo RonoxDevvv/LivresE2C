@@ -1,5 +1,7 @@
 <?php 
     
+    session_start();
+
     //$username=$_POST["username"];
     $navButtons = 
     [
@@ -20,6 +22,14 @@
             "path" => "../controller/usController.php"
         ],
     ];   
+
+    if($_SESSION["ID"]) {
+        $navButtons[]= [
+            "label" => "Mon compte",
+            "path" => "../controller/accountController.php"
+        ];
+    }
+
     $title = "Projet Silence, on lit! - E2C Lille";
     require_once("../view/libraryView.php");
 ?>
